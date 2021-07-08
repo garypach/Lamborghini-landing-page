@@ -184,18 +184,13 @@ table {
     height: 100%;
 }
 
-.jumbo-slider__slide:hover {
-    opacity: 1;
-    filter: saturate(1);
-}
-
 .jumbo-slider__slide-bg {
     background-size: cover !important;
     background-position: center !important;
     height: 100vh;
     width: 100vw;
     opacity: .4;
-    cursor: pointer;
+
     transition: opacity 2s ease-in-out;
     filter: saturate(0);
     position: absolute;
@@ -277,14 +272,6 @@ table {
     /* transform: rotate(90deg); */
 }
 
-.jumbo-slider__nav a {
-    font-size: 1.3rem;
-    color: #03fc7f;
-    text-transform: uppercase;
-    padding: 20px;
-    text-decoration: none;
-}
-
 .jumbo-slider__link {
     font-size: 1.4rem;
     color: white;
@@ -331,7 +318,7 @@ table {
 }
 
 .jumbo-slider__line {
-    height: 5px;
+  height: 5px;
   width: 0;
   background: #ffffff;
   transition: width 6s ease-in-out;
