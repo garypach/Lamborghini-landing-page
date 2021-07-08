@@ -4,7 +4,7 @@ let init = () => {
         circles = document.getElementsByClassName('jumbo-slider__circle'),
         links = document.getElementsByClassName('jumbo-slider__link'),
         current = 1,
-        time = 15000;
+        time = 5000;
 
     //add animation class to slide
     slides[0].classList.add('jumbo-slider__slide--active');
@@ -50,6 +50,7 @@ let init = () => {
     }
     startSliding();
 }
+
 let tag = document.createElement('script');
 
 tag.src = "https://www.youtube.com/iframe_api";
@@ -57,16 +58,16 @@ let firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 let section = {
-    start: 83,
-    end: 99
+    start: 57,
+    end: 65
 };
 let section2 = {
-    start: 19,
-    end: 33
+    start: 20,
+    end: 29
 };
 let section3 = {
-    start: 79,
-    end: 84
+    start: 13,
+    end: 24
 };
 // 3. This function creates an <iframe> (and YouTube player)
 //    after the API code downloads.
@@ -86,9 +87,9 @@ function onYouTubeIframeAPIReady() {
                 rel: 0,
                 disablekb: 1,
                 modestbranding: 1,
-                vq: 'hd1080'
+          
             },
-            videoId: 'Ir7dFd9Oflw',
+            videoId: 'C74Hq3HVD0Y',
             events: {
                 'onReady': onPlayerReady,
                 'onStateChange': onPlayerStateChange
@@ -108,7 +109,7 @@ function onYouTubeIframeAPIReady() {
                 rel: 0,
                 disablekb: 1,
                 modestbranding: 1,
-                vq: 'hd1080'
+         
             },
             videoId: 'fKNdoxRld34',
             events: {
@@ -130,9 +131,8 @@ function onYouTubeIframeAPIReady() {
                 rel: 0,
                 disablekb: 1,
                 modestbranding: 1,
-                vq: 'hd1080'
             },
-            videoId: 'HxMR0iSetio',
+            videoId: 'TdDmHsLnPZ8',
             events: {
                 'onReady': onPlayerReady,
                 'onStateChange': onPlayerStateChange
@@ -146,9 +146,10 @@ function onPlayerReady(event) {
     player.seekTo(section.start);
     player.playVideo();
     player2.mute();
-    player2.seekTo(section.start);
+    player2.seekTo(section2.start);
     player2.playVideo();
-    player3.seekTo(section.start);
+    player3.mute();
+    player3.seekTo(section3.start);
     player3.playVideo();
 }
 var done = false;
@@ -162,7 +163,8 @@ function onPlayerStateChange(event) {
 
 function restartVideoSection() {
     player.seekTo(section.start);
-    player2.seekTo(section.start);
-    player3.seekTo(section.start);
+    player2.seekTo(section2.start);
+    player3.seekTo(section3.start);
 }
+
 init();
