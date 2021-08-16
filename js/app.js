@@ -1,17 +1,22 @@
 let init = () => {
+    if(document.getElementsByClassName('1').clicked == true)
+        {
+        alert("button was clicked");
+        }
     let container = document.getElementsByClassName('jumbo-slider__container')[0],
         slides = document.getElementsByClassName('jumbo-slider__slide'),
         circles = document.getElementsByClassName('jumbo-slider__circle'),
         links = document.getElementsByClassName('jumbo-slider__link'),
         current = 1,
-        time = 5000;
+        time = 15000;
 
     //add animation class to slide
     slides[0].classList.add('jumbo-slider__slide--active');
     links[current - 1].classList.add('jumbo-slider__link--active');
     circles[current - 1].classList.add('jumbo-slider__circle--filled');
 
-
+    
+    
     //update elipsis and links
     let updateNav = (current) => {
         // console.log(`update current: ${current}`)
@@ -62,8 +67,8 @@ let section = {
     end: 65
 };
 let section2 = {
-    start: 20,
-    end: 29
+    start: 15,
+    end: 25
 };
 let section3 = {
     start: 13,
@@ -157,7 +162,7 @@ var done = false;
 function onPlayerStateChange(event) {
     if (event.data == YT.PlayerState.PLAYING) {
         var duration = section.end - section.start;
-        setTimeout(restartVideoSection, duration * 1000);
+        setTimeout(restartVideoSection, duration * 2000);
     }
 }
 
